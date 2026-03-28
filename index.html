@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お絵描き</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="toolbar">
+      <div class="tool-group">
+        <label class="tool-label" for="color">色</label>
+        <input type="color" id="color" value="#1a1a2e" />
+      </div>
+      <div class="tool-group">
+        <label class="tool-label" for="size">太さ</label>
+        <input type="range" id="size" min="1" max="48" value="4" />
+        <span class="size-value" id="sizeValue">4</span>
+      </div>
+      <div class="tool-group">
+        <button type="button" class="btn btn-mode active" id="btnPen" data-mode="pen" title="ペン">ペン</button>
+        <button type="button" class="btn btn-mode" id="btnEraser" data-mode="eraser" title="消しゴム">消しゴム</button>
+      </div>
+      <div class="tool-group">
+        <label class="tool-label" for="saveName">保存名</label>
+        <input type="text" id="saveName" class="input-text" placeholder="drawing" maxlength="200" autocomplete="off" />
+      </div>
+      <div class="tool-group">
+        <label class="tool-label" for="saveFormat">形式</label>
+        <select id="saveFormat" class="select-format">
+          <option value="png">PNG (.png)</option>
+          <option value="jpg">JPEG (.jpg)</option>
+          <option value="gif">GIF (.gif)</option>
+        </select>
+      </div>
+      <div class="tool-group tool-group-actions">
+        <button type="button" class="btn" id="btnClear">クリア</button>
+        <button type="button" class="btn btn-primary" id="btnSave">保存</button>
+      </div>
+    </header>
+    <main class="canvas-wrap">
+      <canvas id="canvas" width="900" height="600"></canvas>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
